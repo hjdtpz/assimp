@@ -5,18 +5,18 @@
 -- include/assimp/revision.h.__gen__
 project 'assimp'
 	kind 'StaticLib'
-    language 'C++'
-    staticruntime "on"
-    cppdialect "C++17"
-    
+	language 'C++'
+	staticruntime "on"
+	cppdialect "C++17"
+	
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-    -- Copy the generated files to the include directory
-    os.copyfile("./contrib/zlib/zconf.h.__gen__", "./contrib/zlib/zconf.h")
-    os.copyfile("./include/assimp/config.h.__gen__", "./include/assimp/config.h")
-    os.copyfile("./include/assimp/revision.h.__gen__", "./include/assimp/revision.h")
-    
+	-- Copy the generated files to the include directory
+	os.copyfile("./contrib/zlib/zconf.h.__gen__", "./contrib/zlib/zconf.h")
+	os.copyfile("./include/assimp/config.h.__gen__", "./include/assimp/config.h")
+	os.copyfile("./include/assimp/revision.h.__gen__", "./include/assimp/revision.h")
+	
 	includedirs {
 		'contrib/',
 		'contrib/irrXML/',
@@ -53,12 +53,12 @@ project 'assimp'
 	}
 	-- Importers
 	defines {
-        '_CRT_SECURE_NO_WARNINGS',
-        '_CRT_NONSTDC_NO_DEPRECATE',
-         
-	    'ASSIMP_BUILD_NO_OWN_ZLIB',
-	    
-	    'ASSIMP_BUILD_NO_USD_IMPORTER',
+		'_CRT_SECURE_NO_WARNINGS',
+		'_CRT_NONSTDC_NO_DEPRECATE',
+		
+		'ASSIMP_BUILD_NO_OWN_ZLIB',
+		
+		'ASSIMP_BUILD_NO_USD_IMPORTER',
 		'ASSIMP_BUILD_NO_3D_IMPORTER',
 		'ASSIMP_BUILD_NO_3DS_IMPORTER',
 		'ASSIMP_BUILD_NO_3MF_IMPORTER',
@@ -132,10 +132,10 @@ project 'assimp'
 		runtime "Debug"
 		symbols "on"
 		
-    filter "configurations:Release"
-        runtime "Release"
-        optimize "on"
-        
-    filter "configurations:Dist"
-        runtime "Release"
-        optimize "on"
+	filter "configurations:Release"
+		runtime "Release"
+		optimize "on"
+		
+	filter "configurations:Dist"
+		runtime "Release"
+		optimize "on"
